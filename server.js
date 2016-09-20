@@ -17,7 +17,7 @@ app.get('/second', function (req, res) {
   res.send('You are on the URL for Second article');
 });
 
-app.get('/thirds', function (req, res) {
+app.get('/third', function (req, res) {
   res.send('You are on the URL for Third article');
 });
 
