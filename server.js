@@ -9,6 +9,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+});
+
 app.get('/first', function (req, res) {
   res.send('You are on the URL for first article');
 });
