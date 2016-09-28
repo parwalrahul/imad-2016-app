@@ -64,6 +64,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var counter = 0;
+app.get('/counter',function(req,res) {
+	counter = counter + 1;
+	res.send(counter.toString());
+});
+
+
 app.get('/:articleName', function (req, res) {
  //articleName == article-one or article-two or article-three
  // articles[articleName]== {} content object for article one.
@@ -75,8 +82,21 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
+
+app.get('/ui/RP.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'RP.jpg'));
+});
+
+var names = [];
+app.get('/submit-name/:name', function (req, res) {
+  var name = req.params.name;
+  names.push(name);
+  //JSON = JAVA SCRIPT OBJECT NOTATION
+  res.send(JSON.stringify(names));
 });
 
 
